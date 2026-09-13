@@ -1,0 +1,13 @@
+<h2>Todo List</h2>
+
+<p>
+  Total Todos: {{ count() }}
+</p>
+
+<ul>
+  @for (todo of todos(); track todo.id) {
+    <li>
+      {{ todo.title }}
+    </li>
+  }
+</ul>

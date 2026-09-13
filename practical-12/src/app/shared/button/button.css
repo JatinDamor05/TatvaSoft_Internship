@@ -1,0 +1,13 @@
+.shared-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background: #1976d2;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.shared-button:hover {
+  background: #125ca1;
+}

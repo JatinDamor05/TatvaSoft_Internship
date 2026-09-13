@@ -1,0 +1,271 @@
+<h1>Reusable Components</h1>
+
+<!-- RC2 -->
+<app-button
+  label="Save"
+  color="primary"
+  [disabled]="false"
+  (clicked)="handleButtonClick($event)">
+</app-button>
+
+<app-button
+  label="Delete"
+  color="danger"
+  [disabled]="false"
+  (clicked)="handleButtonClick($event)">
+</app-button>
+
+<app-button
+  label="Success"
+  color="success"
+  [disabled]="false"
+  (clicked)="handleButtonClick($event)">
+</app-button>
+
+<p>Last Received Message: {{ lastMessage }}</p>
+
+<hr>
+
+<h2>Reusable Cards</h2>
+
+<app-card
+  title="Angular"
+  subtitle="A powerful framework for building web applications."
+  imageUrl="https://angular.dev/assets/images/press-kit/angular_icon_gradient.gif">
+</app-card>
+
+<app-card
+  title="TypeScript"
+  subtitle="A strongly typed programming language built on JavaScript.">
+</app-card>
+
+<hr>
+
+<h2>Parent Form</h2>
+
+<form (submit)="submitForm(); $event.preventDefault()">
+
+  <app-input-field
+    label="Name"
+    placeholder="Enter your name"
+    errorMessage="Name is required"
+    (valueChange)="handleNameChange($event)">
+  </app-input-field>
+
+  <app-input-field
+    label="Email"
+    placeholder="Enter your email"
+    errorMessage="Email is required"
+    (valueChange)="handleEmailChange($event)">
+  </app-input-field>
+
+  <button type="submit">
+    Submit
+  </button>
+
+</form>
+
+<p>Current Name: {{ name }}</p>
+
+<p>Current Email: {{ email }}</p>
+
+<hr>
+
+<h2>Content Projection - Panel</h2>
+
+<hr>
+
+<h2>Multi-Slot Content Projection</h2>
+
+<app-panel>
+
+  <div panel-header>
+    <h2>Angular Dashboard</h2>
+  </div>
+
+  <div panel-body>
+    <p>
+      This content is projected into the body slot.
+    </p>
+
+    <p>
+      Each section is placed into a different named slot.
+    </p>
+  </div>
+
+  <div panel-footer>
+    <button>Save</button>
+    <button>Cancel</button>
+  </div>
+
+</app-panel>
+
+<hr>
+
+<h2>Tabs Component</h2>
+
+<app-tabs>
+
+  <app-tab title="Home">
+    <h3>Home</h3>
+    <p>
+      Welcome to the Home tab.
+    </p>
+  </app-tab>
+
+  <app-tab title="Profile">
+    <h3>Profile</h3>
+    <p>
+      This is the Profile tab.
+    </p>
+  </app-tab>
+
+  <app-tab title="Settings">
+    <h3>Settings</h3>
+    <p>
+      Change your application settings here.
+    </p>
+  </app-tab>
+
+</app-tabs>
+
+<hr>
+
+<h2>ViewChild</h2>
+
+<app-focus-input></app-focus-input>
+
+<hr>
+
+<div class="vc2-section">
+
+  <h1>Parent and Child Counter</h1>
+
+  <app-counter #myCounter></app-counter>
+
+  <div class="parent-area">
+
+    <h3>Parent Reading Child's Count:</h3>
+
+    <p class="parent-count">
+      {{ counter?.count }}
+    </p>
+
+  </div>
+
+</div>
+<hr>
+
+<div class="vc3-section">
+
+  <h1>Multiple Child Counters</h1>
+
+  <div class="counters-container">
+
+    <app-counter></app-counter>
+
+    <app-counter></app-counter>
+
+    <app-counter></app-counter>
+
+  </div>
+
+  <button
+    type="button"
+    class="reset-button"
+    (click)="resetAll()">
+    Reset All
+  </button>
+
+</div>
+
+<hr>
+
+<h1>ContentChild and Content Projection</h1>
+
+<app-wrapper>
+
+  <p appHighlight>
+    This paragraph was projected into the WrapperComponent.
+  </p>
+
+</app-wrapper>
+
+<hr>
+
+<h1>Tabs with ContentChildren</h1>
+
+<app-tabs>
+
+  <app-tab title="Home">
+    <h3>Home</h3>
+    <p>Welcome to the Home tab.</p>
+  </app-tab>
+
+  <app-tab title="Profile">
+    <h3>Profile</h3>
+    <p>This is the Profile tab.</p>
+  </app-tab>
+
+  <app-tab title="Settings">
+    <h3>Settings</h3>
+    <p>Change your application settings here.</p>
+  </app-tab>
+
+</app-tabs>
+
+========
+<hr>
+
+<h1>Alert Component</h1>
+
+<app-alert
+  message="This is a success message"
+  type="success">
+</app-alert>
+
+<app-alert
+  message="Something went wrong"
+  type="error">
+</app-alert>
+
+<app-alert
+  message="Please be careful"
+  type="warning">
+</app-alert>
+
+<hr>
+
+<h1>Clear Dynamic Alerts</h1>
+
+<div class="alert-buttons">
+
+  <button type="button" (click)="showSuccess()">
+    Show Success
+  </button>
+
+  <button type="button" (click)="showError()">
+    Show Error
+  </button>
+
+  <button type="button" (click)="showWarning()">
+    Show Warning
+  </button>
+
+  <button type="button" (click)="clearAllAlerts()">
+    Clear All Alerts
+  </button>
+
+</div>
+
+<div #alertContainer></div>
+
+<hr>
+
+<h1>Dynamic Modal</h1>
+
+<button type="button" (click)="openModal()">
+  Open Modal
+</button>
+
+<ng-container #modalContainer></ng-container>

@@ -1,0 +1,39 @@
+<h1>Assignment 7 - Component Lifecycle Hooks</h1>
+
+<button (click)="changeMessage()">Change Message</button>
+
+<button (click)="toggleChild()">Toggle Child</button>
+
+<app-lifecycle-demo
+  *ngIf="showChild"
+  [messageData]="messageData">
+</app-lifecycle-demo>
+
+<hr>
+
+<h2>Content Projection Card</h2>
+
+<app-card>
+  <h3 #projectedTitle>This is my card title</h3>
+  <p>This content comes from the parent component.</p>
+  <button>Click Me</button>
+</app-card>
+
+<hr>
+
+<app-timer></app-timer>
+
+<hr>
+
+<button (click)="showObservable = !showObservable">
+  Toggle Observable Component
+</button>
+
+<p>
+  Component is:
+  {{ showObservable ? 'VISIBLE' : 'HIDDEN' }}
+</p>
+
+<div *ngIf="showObservable">
+  <app-observable-demo></app-observable-demo>
+</div>

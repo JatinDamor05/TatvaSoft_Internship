@@ -1,0 +1,11 @@
+<h2>Child Component - OnPush</h2>
+
+<p>Counter value: {{ counter.value }}</p>
+
+<button (click)="emitMessage()">
+  Emit Observable Value
+</button>
+
+<p>
+  Observable message: {{ message$ | async }}
+</p>

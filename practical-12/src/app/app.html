@@ -1,0 +1,73 @@
+<h1>Dashboard</h1>
+
+<app-dashboard></app-dashboard>
+
+<hr>
+
+<h1>Second Module</h1>
+
+<a routerLink="/second">Open Second Module</a>
+
+<hr>
+
+<router-outlet></router-outlet>
+
+
+<h2>FM3 - Product Module</h2>
+
+<a routerLink="/product">Product List</a>
+
+<br><br>
+
+<a routerLink="/product/detail">Product Detail</a>
+
+<hr>
+
+<h2>FM4 - Order Module</h2>
+
+<a routerLink="/order">Order List</a>
+
+<hr>
+
+<router-outlet></router-outlet>
+
+<h2>Feature Modules</h2>
+
+<a routerLink="/product">Product List</a>
+
+<br><br>
+
+<a routerLink="/product/detail">Product Detail</a>
+
+<br><br>
+
+<a routerLink="/order">Order List</a>
+
+<hr>
+
+<router-outlet></router-outlet>
+
+<!--  -->
+
+<hr>
+
+<h2>SM1 - Shared Module</h2>
+
+<h3>Reusable ButtonComponent</h3>
+
+<app-button></app-button>
+
+<h3>Reusable LoaderComponent</h3>
+
+<app-loader></app-loader>
+
+<!--  -->
+<hr>
+
+<h2>CM1 - Core Module Services</h2>
+
+<button (click)="testCoreServices()">
+  Test Core Services
+</button>
+
+<p>Open the browser Console after clicking the button.</p>

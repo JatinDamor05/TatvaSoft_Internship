@@ -1,0 +1,15 @@
+<h2>RxJS Cart</h2>
+
+<ul>
+  @for (item of (cartItems$ | async); track item.name) {
+    <li>
+      {{ item.name }} - ₹{{ item.price }}
+    </li>
+  }
+</ul>
+
+<h3>
+  Total Price: ₹{{ totalPrice$ | async }}
+</h3>
+
+<button (click)="addItem()">Add Item</button>

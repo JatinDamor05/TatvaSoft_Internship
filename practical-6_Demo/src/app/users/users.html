@@ -1,0 +1,50 @@
+<h2>Users</h2>
+
+<div *ngIf="errorMessage">
+  <p>⚠ {{ errorMessage }}</p>
+</div>
+
+<div *ngFor="let user of users">
+
+  <p>
+    <strong>{{ user.name }}</strong>
+    - {{ user.email }}
+
+    <button (click)="editUser(user)">
+      Edit
+    </button>
+
+    <button (click)="deleteUser(user.id)">
+      Delete
+    </button>
+  </p>
+
+</div>
+
+<hr>
+
+<h2>{{ editingUser ? 'Edit User' : 'Create User' }}</h2>
+
+<input
+  type="text"
+  placeholder="Name"
+  [(ngModel)]="name"
+>
+
+<input
+  type="email"
+  placeholder="Email"
+  [(ngModel)]="email"
+>
+
+<button
+  *ngIf="!editingUser"
+  (click)="createUser()">
+  Create User
+</button>
+
+<button
+  *ngIf="editingUser"
+  (click)="updateUser()">
+  Update User
+</button>

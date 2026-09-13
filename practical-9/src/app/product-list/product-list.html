@@ -1,0 +1,15 @@
+<h2>TB2 - Product List with trackBy</h2>
+
+<button (click)="refreshList()">
+  Refresh List
+</button>
+
+<hr>
+
+<ul>
+  <li *ngFor="let product of products; trackBy: trackById">
+    ID: {{ product.id }} |
+    {{ product.name }} |
+    ${{ product.price }}
+  </li>
+</ul>

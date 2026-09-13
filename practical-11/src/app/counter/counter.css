@@ -1,0 +1,26 @@
+.child-counter {
+  width: 400px;
+  padding: 24px;
+  margin: 20px 0;
+  background: #f8fafc;
+  border: 1px solid #dbe3ec;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.child-counter h3 {
+  margin: 0 0 15px;
+  font-size: 22px;
+  color: #1e293b;
+}
+
+.child-counter p {
+  margin: 0;
+  font-size: 18px;
+  color: #475569;
+}
+
+.child-counter p::first-letter {
+  font-weight: bold;
+}

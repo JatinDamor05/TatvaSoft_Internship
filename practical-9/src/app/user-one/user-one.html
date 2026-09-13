@@ -1,0 +1,15 @@
+<h2>AC4 - Button Spam Prevention</h2>
+
+<button
+  (click)="loadUsers()"
+  [disabled]="isLoading"
+>
+  {{ isLoading ? 'Loading...' : 'Load Users' }}
+</button>
+
+<ul>
+  <li *ngFor="let user of users">
+    <strong>{{ user.name }}</strong>
+    - {{ user.email }}
+  </li>
+</ul>

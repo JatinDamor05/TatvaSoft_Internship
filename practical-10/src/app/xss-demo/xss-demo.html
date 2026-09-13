@@ -1,0 +1,11 @@
+<h2>X2 - Angular HTML Sanitization</h2>
+
+<input
+  type="text"
+  [(ngModel)]="userInput"
+  placeholder="Enter HTML"
+/>
+
+<h3>innerHTML Output:</h3>
+
+<div [innerHTML]="userInput"></div>

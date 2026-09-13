@@ -1,0 +1,30 @@
+<div class="tabs-container">
+
+  <div class="tab-buttons">
+
+    @for (tab of tabs; track tab) {
+      <button
+        type="button"
+        [class.active]="activeTab === tab"
+        (click)="selectTab(tab)">
+
+        {{ tab.title }}
+
+      </button>
+    }
+
+  </div>
+
+  <div class="tab-content">
+
+    @if (activeTab) {
+
+      <ng-container
+        [ngTemplateOutlet]="activeTab.contentTemplate">
+      </ng-container>
+
+    }
+
+  </div>
+
+</div>
